@@ -1,0 +1,51 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 4rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.main-content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+    margin-left: 2rem;
+    margin-right: 2rem;
+}
+
+.section1{
+    flex: 1;
+    padding: 1rem;
+}
+.section2{
+    flex: 1;
+    padding: 1rem;
+}
+.section3{
+    flex: 1;
+    padding: 1rem;
+}
+
+li{
+    list-style: square;
+    list-style-position: inside;
+}
+
+a{
+    text-decoration: underline;
+}
