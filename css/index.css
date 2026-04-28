@@ -17,6 +17,10 @@ body{
     margin-right: 2rem;
 }
 
+.home-link{
+    text-decoration: none;
+}
+
 .main-content{
     display: flex;
     flex-direction: row;
@@ -53,9 +57,9 @@ p{
     padding: 1rem;
 }
 
-.column2{
+    .column2{
     flex: 3;
-    padding: 1rem;
+    padding: 0 1rem;
 }
     
 }

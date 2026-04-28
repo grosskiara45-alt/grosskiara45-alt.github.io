@@ -17,29 +17,18 @@ body{
     margin-right: 2rem;
 }
 
+.home-link{
+    text-decoration: none;
+}
+
 .main-content{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: flex-start;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
+    flex-direction: column;
+    margin: 2rem;;
 }
 
 .item, h2{
     padding: 5px 0;
-}
-
-.column1{
-    flex: 1;
-    padding: 1rem;
-}
-
-.column2{
-    flex: 2;
-    padding: 1rem;
 }
 
 li{
@@ -49,4 +38,28 @@ li{
 
 a{
     text-decoration: underline;
+}
+
+@media screen and (min-width: 768px) {
+    .main-content{
+        display: flex;
+        flex-flow: row-reverse wrap;
+        box-sizing: border-box;
+}
+    .summary{
+        flex: 0 0 100%;
+        padding: 0 1rem 1rem 1rem; 
+        box-sizing: border-box;
+}
+
+    .column1{
+    flex: 3;
+    padding: 1rem;
+}
+
+    .column2{
+    flex: 1;
+    padding: 1rem;
+}
+    
 }
