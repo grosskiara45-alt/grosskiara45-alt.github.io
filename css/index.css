@@ -23,23 +23,11 @@ body{
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 1rem;
-    margin-left: 2rem;
-    margin-right: 2rem;
-}
-
-.item, h2{
-    padding: 5px 0;
-}
-
-.column1{
-    flex: 1;
-    padding: 1rem;
+    margin: 2rem;
 }
 
 .column2{
-    flex: 2;
-    padding: 1rem;
+    padding: 1rem 0;
 }
 
 li{
@@ -49,4 +37,25 @@ li{
 
 a{
     text-decoration: underline;
+}
+
+h2{
+    text-align: center;
+}
+
+p{
+    text-indent: 20px;
+}
+
+@media screen and (min-width: 768px) {
+    .column1{
+    flex: 2;
+    padding: 1rem;
+}
+
+.column2{
+    flex: 3;
+    padding: 1rem;
+}
+    
 }
