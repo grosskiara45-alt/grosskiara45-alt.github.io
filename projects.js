@@ -21,34 +21,39 @@ async function fetchGitHubProjects(){
         });
 
         if (myOwnRepos.length === 0) {
-            projectsContainer.innerHTML = `<p class="no-projects">No public, non-forked repositories found for this user.</p>`;
+            projectsContainer.innerHTML = `<p class="no-projects">No matching projects found.</p>`;
             return;
         }
 
-        let htmlContent = '';
-        myOwnRepos.forEach(repo => {
-            const description = repo.description || 'No description provided.';
-            const language = repo.language || 'Mixed languages';
-            htmlContent += `
-            <div class="section">
-                <h2>${repo.name}</h2>
-                <p class="description">${description}</p>
-                <div class="project-meta">
-                    <span class="language">${language}</span>
-                </div>
-                <a href="${repo.html_url}" target="_blank" class="project-link">
-                View on GitHub
-                </a>
-            </div>
-            `;
-        });
-        projectsContainer.innerHTML = htmlContent;
-    } catch (error) {
-        console.error(`Error fetching GitHub data!`, error);
-        projectsContainer.innerHTML = `
-        <p> Couldn't load project! </p>
-        `;
-    }
-}
+        const projectNodes =  myOwnRepos.map(repo => {
+            const section = document.createElement('div');
+            section.classList = 'section';
 
+            const h2 = document.createElement('h2');
+            h2.textContent = repo.name;
+        
+            const p = document.createElement('p');
+            p.classList = 'description';
+            p.textContent = repo.description;
+
+            const span = document.createElement('span');
+            span.classList = 'language';
+            span.textContent = repo.language;
+
+            const link = document.createElement('a');
+            link.href = repo.html_url;
+            link.target = '_blank';
+            link.classList = 'project-link';
+            link.textContent = 'View on GitHub';
+
+            section.append(h2, p, span, link);
+            return section;
+            });
+        projectsContainer.replaceChildren(...projectNodes);
+        } 
+    catch (error){
+            console.error(`Error fetching GitHub Data!`, error);
+            projectsContainer.innerHTML = `<p>Couldn't load projects!</p>`;
+        }  
+    } 
 fetchGitHubProjects();
